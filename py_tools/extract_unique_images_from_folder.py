@@ -82,15 +82,13 @@ min_size = 400
 ## simple file listing
 box_files = list_file(source_folder)
 
-##List above size and copy them
+##List above size
 above_size = keep_above_size(box_files, min_size)
-
 
 ### filternames
 namefiltered = filter_names(above_size)
 
-
-## copy filtered for ffurther checking
+## copy filtered for further checking
 filtered_res_fold = os.path.join( source_folder, "filtered_res")
 if not os.path.exists(filtered_res_fold):
     os.mkdir(filtered_res_fold)
