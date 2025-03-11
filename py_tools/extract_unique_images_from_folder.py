@@ -20,7 +20,7 @@ def keep_above_size(box_files, min_img_size):
     for box_file in box_files:
         im = Image.open(box_file)
         im_size = im.size
-        if all(i >= min_img_size for i in im_size):
+        if all(i >= min_img_size for i in list(im_size)):
             lout.append(box_file)
     return lout
 
@@ -75,9 +75,9 @@ def filter_names(box_files):
 
 ## V1 not really working
 
-source_folder = r"F:\libretro-thumbnails\Nintendo - Game Boy Color\Named_Boxarts"
-destination_folder = r"F:\Boxart_Project\Batocera_Systems\gbc"
-min_size = 512
+source_folder = r"F:\libretro-thumbnails\Nintendo - Wii U\Named_Boxarts"
+destination_folder = r"F:\Boxart_Project\Batocera_Systems\wiiu"
+min_size = 400
 
 ## simple file listing
 box_files = list_file(source_folder)
@@ -101,8 +101,6 @@ for f in namefiltered:
 ##keep unique
 lunique = get_unique(filtered_res_fold)
 
-#print( "{}/{} unique images above {} pixels".format(len(lunique), len(box_files), min_size ))
-#print(len( above_size ))
 for unique_file in lunique:
     if os.path.exists(unique_file):
         fpath,ffile = os.path.split(unique_file)
@@ -114,28 +112,6 @@ shutil.rmtree(filtered_res_fold)
 
 
 print( "\n\ninitial boxarts : {}\nabovesize : {}\nnamefiltered : {}\nunique : {}".format(len(box_files), len(above_size), len(namefiltered), len(lunique) ))
-
-
-#source_folder = r"F:\libretro-thumbnails\Nintendo - Game Boy Advance\Named_Boxarts"
-#destination_folder = r"F:\Boxart_Project\Batocera_Systems\gba"
-#min_size = 512
-
-## simple file listing
-#box_files = list_file(source_folder)
-##List above size
-#above_size = keep_above_size(box_files, min_size)
-### filternames
-#namefiltered = filter_names(above_size)
-
-
-#for unique_file in namefiltered:
-#    if os.path.exists(unique_file):
-#        fpath,ffile = os.path.split(unique_file)
-#        newfile = os.path.join( destination_folder, ffile )
-#        shutil.copy(unique_file, newfile)
-
-#print( "\n\ninitial boxarts : {}\nabovesize : {}\nnamefiltered : {}".format(len(box_files), len(above_size), len(namefiltered) ))
-
 
 
 
