@@ -45,3 +45,9 @@ naomi2 <br>
 pico <br>
 saturn <br>
 sg1000 <br>
+
+# Sony <br>
+psx <br>
+ps2 <br>
+ps3 (!) <br>
+psp <br>
