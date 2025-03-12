@@ -75,8 +75,8 @@ def filter_names(box_files):
 
 ## V1 not really working
 
-source_folder = r"F:\libretro-thumbnails\Sega - Game Gear\Named_Boxarts"
-destination_folder = r"F:\Boxart_Project\Batocera_Systems\gamegear"
+source_folder = r"F:\libretro-thumbnails\Sega - Saturn\Named_Boxarts"
+destination_folder = r"F:\Boxart_Project\Batocera_Systems\saturn"
 min_size = 300
 
 ## simple file listing
