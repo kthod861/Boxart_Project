@@ -37,3 +37,10 @@ gameandwatch (!) <br>
 sega32x <br>
 dreamcast <br>
 gamegear <br>
+mastersystem <br>
+megadrive <br>
+segacd <br>
+naomi <br>
+naomi2 <br>
+pico <br>
+saturn <br>
