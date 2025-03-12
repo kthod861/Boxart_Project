@@ -34,5 +34,5 @@ wiiu <br>
 gameandwatch (!) <br>
 
 # Sega <br>
-sega32x
-dreamcast
+sega32x <br>
+dreamcast <br>
