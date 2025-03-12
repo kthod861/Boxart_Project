@@ -75,9 +75,9 @@ def filter_names(box_files):
 
 ## V1 not really working
 
-source_folder = r"F:\libretro-thumbnails\Nintendo - Wii U\Named_Boxarts"
-destination_folder = r"F:\Boxart_Project\Batocera_Systems\wiiu"
-min_size = 400
+source_folder = r"F:\libretro-thumbnails\Handheld Electronic Game\Named_Boxarts"
+destination_folder = r"F:\Boxart_Project\Batocera_Systems\gameandwatch"
+min_size = 300
 
 ## simple file listing
 box_files = list_file(source_folder)

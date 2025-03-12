@@ -24,10 +24,11 @@ n64 <br>
 n64dd (!) <br>
 nds <br>
 nes <br>
-pokemini(!) <br>
+pokemini (!) <br>
 satellaview <br>
 sufami (!) <br>
 snes <br>
 virtualboy (!) <br>
 wii <br>
 wiiu <br>
+gameandwatch (!) <br>
