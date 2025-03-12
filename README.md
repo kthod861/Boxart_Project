@@ -44,3 +44,4 @@ naomi <br>
 naomi2 <br>
 pico <br>
 saturn <br>
+sg1000 <br>
