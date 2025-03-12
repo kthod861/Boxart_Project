@@ -32,3 +32,7 @@ virtualboy (!) <br>
 wii <br>
 wiiu <br>
 gameandwatch (!) <br>
+
+# Sega <br>
+sega32x
+dreamcast
