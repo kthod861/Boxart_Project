@@ -41,3 +41,6 @@ mastersystem <br>
 megadrive <br>
 segacd <br>
 naomi <br>
+naomi2 <br>
+pico <br>
+saturn <br>
