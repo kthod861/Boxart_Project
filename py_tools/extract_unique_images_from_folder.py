@@ -75,8 +75,8 @@ def filter_names(box_files):
 
 ## V1 not really working
 
-source_folder = r"F:\libretro-thumbnails\Sony - PlayStation Portable\Named_Boxarts"
-destination_folder = r"F:\Boxart_Project\Batocera_Systems\psp"
+source_folder = r"F:\libretro-thumbnails\Atari - ST\Named_Boxarts"
+destination_folder = r"F:\Boxart_Project\Batocera_Systems\atarist"
 min_size = 300
 
 ## simple file listing
