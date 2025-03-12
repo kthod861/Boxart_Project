@@ -66,3 +66,7 @@ neogeo <br>
 neogeocd <br>
 ngp <br>
 ngpc <br>
+
+# Amstrad <br>
+amstradcpc <br>
+gx4000 <br>
