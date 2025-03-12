@@ -51,3 +51,12 @@ psx <br>
 ps2 <br>
 ps3 (!) <br>
 psp <br>
+
+# Atari <br>
+atari800<br>
+atari2600<br>
+atari5200<br>
+atari7800<br>
+atarist<br>
+jaguar<br>
+lynx<br>
