@@ -75,8 +75,8 @@ def filter_names(box_files):
 
 ## V1 not really working
 
-source_folder = r"F:\libretro-thumbnails\SNK - Neo Geo Pocket Color\Named_Boxarts"
-destination_folder = r"F:\Boxart_Project\Batocera_Systems\ngpc"
+source_folder = r"F:\libretro-thumbnails\Amstrad - CPC\Named_Boxarts"
+destination_folder = r"F:\Boxart_Project\Batocera_Systems\amstradcpc"
 min_size = 300
 
 ## simple file listing
