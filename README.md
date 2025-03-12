@@ -1,12 +1,12 @@
 # extract_unique_images_from_folder.py
-Simple and dirty tool to prepare the grid backgrounds based on folder full of boxarts <br>
+Simple and dirty tool to prepare a cleaned boxart folder based on a folder full (mismathed, duplicated, etc ) folder of boxarts <br>
 - filter by size ( keep only above)
-- filter by name ( based on everything before the (***) )
+- filter by name ( based on everything before the "(" )
 - filter by hash by comparing images
 
 # Make_Grid.py
-Simple and dirty tool to randomly choose boxarts in a folder and make a grid image <br>
-- try to define the main aspect ratio available in the folder and keep all images in that ratio
+Simple and dirty tool to randomly choose boxarts in a folder (the one prepared above) and make a grid image of it <br>
+- try to define the main aspect ratio available in the folder and choose all images in that ratio only
 - make a grid with output size, padding and color balance settings
 - each generation will be different due to the random aspect of the script
 
