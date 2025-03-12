@@ -38,3 +38,6 @@ sega32x <br>
 dreamcast <br>
 gamegear <br>
 mastersystem <br>
+megadrive <br>
+segacd <br>
+naomi <br>
