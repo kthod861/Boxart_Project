@@ -8,7 +8,7 @@ Simple and dirty tool to prepare a cleaned boxart folder based on a folder full 
 Simple and dirty tool to randomly choose boxarts in a folder (the one prepared above) and make a grid image of it <br>
 - try to define the main aspect ratio available in the folder and choose all images in that ratio only
 - make a grid with output size, padding and color balance settings
-- each generation will be different due to the random aspect of the script
+- each generation will be different due to the random aspect of the script ( if possible, no duplicate )
 
 ## System status : Done (! for low count)<br>
 
