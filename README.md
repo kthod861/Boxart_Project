@@ -60,3 +60,9 @@ atari7800<br>
 atarist<br>
 jaguar<br>
 lynx<br>
+
+# Snk <br>
+neogeo <br>
+neogeocd <br>
+ngp <br>
+ngpc <br>
