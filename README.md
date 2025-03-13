@@ -85,3 +85,11 @@ msx1<br>
 msx2<br>
 xbox<br>
 xbox360<br>
+
+# Nec <br>
+pcengine<br>
+pcenginecd<br>
+supergrafx (!) <br>
+pc98<br>
+pc88<br>
+pcfx<br>
