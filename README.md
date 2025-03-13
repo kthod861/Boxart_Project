@@ -45,6 +45,7 @@ naomi2 <br>
 pico <br>
 saturn <br>
 sg1000 <br>
+atomiswave<br>
 
 # Sony <br>
 psx <br>
@@ -93,3 +94,7 @@ supergrafx (!) <br>
 pc98<br>
 pc88<br>
 pcfx<br>
+
+# fbneo <br>
+
+# mame <br>
