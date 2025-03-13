@@ -79,3 +79,9 @@ amigacdtv<br>
 pet<br>
 cplus4<br>
 c20<br>
+
+# Microsoft <br>
+msx1<br>
+msx2<br>
+xbox<br>
+xbox360<br>
