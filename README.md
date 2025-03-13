@@ -70,3 +70,12 @@ ngpc <br>
 # Amstrad <br>
 amstradcpc <br>
 gx4000 <br>
+
+# Commodore <br>
+c64<br>
+amiga500<br>
+amigacd32<br>
+amigacdtv<br>
+pet<br>
+cplus4<br>
+c20<br>
