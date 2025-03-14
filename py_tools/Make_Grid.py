@@ -243,7 +243,7 @@ def main_grid_creator(boxart_fold, system_name , output_resolution, ntiles, padd
 ###################################################
 
 
-system_name = "mame"
+system_name = "archimedes"
 
 bato_systems = r"F:\Boxart_Project\Batocera_Systems"
 outpath = r"F:\Boxart_Project"

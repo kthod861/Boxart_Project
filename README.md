@@ -98,3 +98,23 @@ pcfx<br>
 # fbneo <br>
 
 # mame <br>
+
+# 3do <br>
+
+# abuse ( no boxart ] <br>
+
+# adam <br>
+
+# colecovision <br>
+
+# advision (!)<br>
+
+# apfm1000 <br>
+
+# apple2 (3dbox) <br>
+
+# apple2gs (3dbox) <br>
+
+# arcadia <br>
+
+# archimedes (no boxart) <br>
