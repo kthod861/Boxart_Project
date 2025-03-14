@@ -80,6 +80,7 @@ amigacdtv<br>
 pet<br>
 cplus4<br>
 c20<br>
+c128<br>
 
 # Microsoft <br>
 msx1<br>
@@ -101,7 +102,7 @@ pcfx<br>
 
 # 3do <br>
 
-# abuse ( no boxart ] <br>
+# abuse ( no boxart ) <br>
 
 # adam <br>
 
@@ -120,3 +121,21 @@ pcfx<br>
 # archimedes (no boxart) <br>
 
 # arduboy <br>
+
+# astrocde <br>
+
+# atom <br>
+
+# bbc <br>
+
+# camplynx (no boxart)<br>
+
+# cannonball<br>
+
+# cavestory <br>
+
+# cdi <br>
+
+# cdogs <br>
+
+# cgenius  <br>
