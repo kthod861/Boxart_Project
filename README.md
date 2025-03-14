@@ -118,3 +118,5 @@ pcfx<br>
 # arcadia <br>
 
 # archimedes (no boxart) <br>
+
+# arduboy <br>
