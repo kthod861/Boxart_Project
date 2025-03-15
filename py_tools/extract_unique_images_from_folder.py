@@ -20,7 +20,7 @@ def keep_above_size(box_files, min_img_size):
     for box_file in box_files:
         im = Image.open(box_file)
         im_size = im.size
-        if all(i >= min_img_size for i in list(im_size)):
+        if any(i >= min_img_size for i in list(im_size)):
             lout.append(box_file)
     return lout
 
@@ -75,41 +75,43 @@ def filter_names(box_files):
 
 ## V1 not really working
 
-source_folder = r"F:\libretro-thumbnails\Philips - CD-i\Named_Boxarts"
-destination_folder = r"F:\Boxart_Project\Batocera_Systems\cdi"
+source_folder = r"F:\libretro-thumbnails\GamePark - GP32\Named_Boxarts"
+destination_folder = r"F:\Boxart_Project\Batocera_Systems\gp32"
 min_size = 300
 
 ## simple file listing
 box_files = list_file(source_folder)
-
+print(len(box_files))
 ##List above size
 above_size = keep_above_size(box_files, min_size)
+if not above_size:
+    print("No files after size filter !!")
+else:
+    ### filternames
+    namefiltered = filter_names(above_size)
 
-### filternames
-namefiltered = filter_names(above_size)
+    ## copy filtered for further checking
+    filtered_res_fold = os.path.join( source_folder, "filtered_res")
+    if not os.path.exists(filtered_res_fold):
+        os.mkdir(filtered_res_fold)
 
-## copy filtered for further checking
-filtered_res_fold = os.path.join( source_folder, "filtered_res")
-if not os.path.exists(filtered_res_fold):
-    os.mkdir(filtered_res_fold)
+    for f in namefiltered:
+        copyfile(f, filtered_res_fold)
 
-for f in namefiltered:
-    copyfile(f, filtered_res_fold)
+    ##keep unique
+    lunique = get_unique(filtered_res_fold)
 
-##keep unique
-lunique = get_unique(filtered_res_fold)
+    for unique_file in lunique:
+        if os.path.exists(unique_file):
+            fpath,ffile = os.path.split(unique_file)
+            newfile = os.path.join( destination_folder, ffile )
+            shutil.copy(unique_file, newfile)
 
-for unique_file in lunique:
-    if os.path.exists(unique_file):
-        fpath,ffile = os.path.split(unique_file)
-        newfile = os.path.join( destination_folder, ffile )
-        shutil.copy(unique_file, newfile)
-
-#rem filterd fold
-shutil.rmtree(filtered_res_fold)
+    #rem filterd fold
+    shutil.rmtree(filtered_res_fold)
 
 
-print( "\n\ninitial boxarts : {}\nabovesize : {}\nnamefiltered : {}\nunique : {}".format(len(box_files), len(above_size), len(namefiltered), len(lunique) ))
+    print( "\n\ninitial boxarts : {}\nabovesize : {}\nnamefiltered : {}\nunique : {}".format(len(box_files), len(above_size), len(namefiltered), len(lunique) ))
 
 
 

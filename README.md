@@ -15,8 +15,10 @@ Simple and dirty tool to randomly choose boxarts in a folder (the one prepared a
 
 # Nintendo <br>
 gb <br>
+gb2players<br>
 gba <br>
 gbc <br>
+gbc2players<br>
 fds <br>
 gamecube <br>
 3ds <br>
@@ -139,3 +141,51 @@ pcfx<br>
 # cdogs <br>
 
 # cgenius  <br>
+
+# channelf <br>
+
+# coco <br>
+
+# commanderx16 (no boxart)<br>
+
+# corsixth (no boxart)<br>
+
+# crvision <br>
+
+# daphne <br>
+
+# devilutionx (no boxart)<br>
+
+# dos <br>
+
+# easyrpg <br>
+
+# ecwolf (no boxart)<br>
+
+# eduke32 (no boxart)<br>
+
+# electron <br>
+
+# fallout1-ce (no boxart)<br>
+
+# fallout2-ce (no boxart)<br>
+
+# flash (no boxart)<br>
+
+# fm7 (no boxart)<br>
+
+# fmtowns (3dbox) <br>
+
+# fury (no boxart)<br>
+
+# gamate <br>
+
+# gamecom <br>
+
+# gamepock <br>
+
+# gmaster (no boxart)<br>
+
+# gp32 <br>
+
+# gzdoom (no boxart)<br>

@@ -243,7 +243,7 @@ def main_grid_creator(boxart_fold, system_name , output_resolution, ntiles, padd
 ###################################################
 
 
-system_name = "cgenius"
+system_name = "gzdoom"
 
 bato_systems = r"F:\Boxart_Project\Batocera_Systems"
 outpath = r"F:\Boxart_Project"
@@ -254,7 +254,7 @@ color_scale = 1.2
 ouputimg169 = os.path.join( outpath, "16_9", "{}.jpg".format( system_name ))
 ouputimg43 = os.path.join( outpath, "4_3", "{}.jpg".format( system_name ))
 
-only_compat_ratio = False
+only_compat_ratio = True
 
 main_grid_creator(boxart_fold, system_name, (1920,1080), 10, 5, ouputimg169, only_compat_aspectratio= only_compat_ratio, color_scale = color_scale)
 main_grid_creator(boxart_fold, system_name, (960,720), 10, 5, ouputimg43, only_compat_aspectratio= only_compat_ratio, color_scale = color_scale)
