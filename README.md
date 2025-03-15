@@ -16,6 +16,7 @@ Simple and dirty tool to randomly choose boxarts in a folder (the one prepared a
 # Nintendo <br>
 gb <br>
 gb2players<br>
+sgb<br>
 gba <br>
 gbc <br>
 gbc2players<br>
@@ -30,6 +31,7 @@ pokemini (!) <br>
 satellaview <br>
 sufami (!) <br>
 snes <br>
+snes-msu1 <br>
 virtualboy (!) <br>
 wii <br>
 wiiu <br>
@@ -42,12 +44,14 @@ gamegear <br>
 mastersystem <br>
 megadrive <br>
 segacd <br>
+msu-md <br>
 naomi <br>
 naomi2 <br>
 pico <br>
 saturn <br>
 sg1000 <br>
 atomiswave<br>
+systemsp (no BoxArt)<br>
 
 # Sony <br>
 psx <br>
@@ -62,6 +66,7 @@ atari5200<br>
 atari7800<br>
 atarist<br>
 jaguar<br>
+jaguarcd<br>
 lynx<br>
 
 # Snk <br>
@@ -87,13 +92,15 @@ c128<br>
 # Microsoft <br>
 msx1<br>
 msx2<br>
+msx2+<br>
+msxturbor (3d box)<br>
 xbox<br>
 xbox360<br>
 
 # Nec <br>
 pcengine<br>
 pcenginecd<br>
-supergrafx (!) <br>
+supergrafx (3dbox) <br>
 pc98<br>
 pc88<br>
 pcfx<br>
@@ -189,3 +196,95 @@ pcfx<br>
 # gp32 <br>
 
 # gzdoom (no boxart)<br>
+
+# hcl (no boxart)<br>
+
+# hurrican (no boxart)<br>
+
+# intellivision<br>
+
+# iortcw (no boxart)<br>
+
+# laser310 (no boxart)<br>
+
+# lcdgames <br>
+
+# lowresnx (no boxart)<br>
+
+# lutro (no boxart)<br>
+
+# macintosh (no boxart)<br>
+
+# megaduck <br>
+
+# moonlight (no boxart)<br>
+
+# mpv (no boxart)<br>
+
+# mrboom (no boxart)<br>
+
+# multivision (no boxart)<br>
+
+# o2em (3dbox) <br>
+
+# odcommander (no boxart)<br>
+
+# openbor<br>
+
+# openjazz (no boxart)<br>
+
+# pdp1 (no boxart)<br>
+
+# pico8 <br>
+
+# plugnplay (no boxart)<br>
+
+# ports (no boxart)<br>
+
+# prboom (no boxart)<br>
+
+# pv1000 (!)<br>
+
+# pygame (no boxart)<br>
+
+# quake3 (no boxart)<br>
+
+# raze (no boxart)<br>
+
+# reminiscence (no boxart)<br>
+
+# rott (no boxart)<br>
+
+# samcoupe<br>
+
+# scummvm <br>
+
+# scv <br>
+
+# sdlpop (no boxart)<br>
+
+# singe (no boxart)<br>
+
+# socrates<br>
+
+# solarus (no boxart)<br>
+
+# sonicretro (no boxart)<br>
+
+# spectravideo (no boxart)<br>
+
+# superbroswar (no boxart)<br>
+
+# supervision <br>
+
+# supracan <br>
+
+# thextech <br>
+
+# thomson <br>
+
+# ti99 (no boxart)<br>
+
+# tic80 (no boxart)<br>
+
+# tutor <br>
