@@ -68,6 +68,7 @@ atarist<br>
 jaguar<br>
 jaguarcd<br>
 lynx<br>
+xegs<br>
 
 # Snk <br>
 neogeo <br>
@@ -288,3 +289,39 @@ pcfx<br>
 # tic80 (no boxart)<br>
 
 # tutor <br>
+
+# tyrian (no boxart)<br>
+
+# tyrquake (no boxart)<br>
+
+# uzebox (no boxart)<br>
+
+# vc4000 <br>
+
+# vectrex <br>
+
+# vgmplay (no boxart)<br>
+
+# videopacplus <br>
+
+# vis (no boxart)<br>
+
+# vsmile <br>
+
+# wswan <br>
+
+# wswanc <br>
+
+# x1 (!)<br>
+
+# x68000 <br>
+
+# xash3d_fwgs (no boxart)<br>
+
+# xrick (no boxart)<br>
+
+# zc210 (no boxart)<br>
+
+# zx81 <br>
+
+# zxspectrum <br>
