@@ -1,5 +1,5 @@
 # extract_unique_images_from_folder.py
-Simple and dirty tool to prepare a cleaned boxart folder based on a folder full (mismathed, duplicated, etc ) folder of boxarts <br>
+Simple and dirty tool to prepare a cleaned boxart folder based on a folder full of boxarts images (ratio and size variation, duplicated, etc )   <br>
 - filter by size ( keep only above)
 - filter by name ( based on everything before the "(" )
 - filter by hash by comparing images
