@@ -247,7 +247,7 @@ def main_grid_creator(boxart_fold, system_name , output_resolution, ntiles, padd
 ###################################################
 
 
-system_name = "ps4"
+system_name = "mark3"
 
 bato_systems = r"F:\Boxart_Project\Batocera_Systems"
 outpath = r"F:\Boxart_Project"
