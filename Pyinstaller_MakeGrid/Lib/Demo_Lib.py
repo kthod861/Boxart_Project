@@ -1,4 +1,6 @@
-from PySide2 import QtUiTools, QtWidgets
+#from PySide2 import QtUiTools, QtWidgets
+from PySide6 import QtUiTools,QtCore,QtGui,QtWidgets
+from PySide6.QtWidgets import (QApplication,QDockWidget,QPushButton,QHBoxLayout,QListWidgetItem,QFileDialog)
 from PIL import Image, ImageEnhance
 import os
 import random
@@ -6,7 +8,7 @@ import math
 
 def popup(s):
     dlg = QtWidgets.QMessageBox(None)
-    dlg.setWindowTitle("info")
+    dlg.setWindowTitle("POPUP")
     dlg.setText(s)
     button = dlg.exec_()
 
@@ -77,10 +79,10 @@ def get_resolution_onlyrescompatible(img_folder):
     if lamount:
         maxamount = max(lamount)
         idxres = lamount.index(maxamount)
-        print( "-- Main resolution : {} ({}) ({} files / {})".format(lresolutions[idxres],lapspectratio[idxres], maxamount, len(lfiles)  ) )
-        return lresolutions[idxres],limage[idxres]
+        log = "-- Main resolution : {} ({}) ({} files / {})".format(lresolutions[idxres],lapspectratio[idxres], maxamount, len(lfiles)  )
+        return lresolutions[idxres],limage[idxres], log
     else:
-        return None,None
+        return None,None,None
         print(lresolutions)
         print(lamount)
 
@@ -113,14 +115,15 @@ def get_resolution_allimages(img_folder):
     if lamount:
         maxamount = max(lamount)
         idxres = lamount.index(maxamount)
-        print( "-- Main resolution : {} ({}) ({} files / {})".format(lresolutions[idxres],lapspectratio[idxres], maxamount, len(lfiles)  ) )
-        return lresolutions[idxres],lallimage
+        log = "-- Main resolution : {} ({}) ({} files / {})".format(lresolutions[idxres],lapspectratio[idxres], maxamount, len(lfiles) )
+        return lresolutions[idxres],lallimage, log
     else:
-        return None,None
+        return None,None, None
         print(lresolutions)
         print(lamount)
 
 def makegrid_fixed_outputres(thumb_res, output_res, output_path, list_images, perline_target, padding, color_scale = 1.0):
+    log = ""
     out_w,out_h = output_res[0],output_res[1]
     thumb_w,thumb_h = thumb_res[0],thumb_res[1]
 
@@ -133,15 +136,15 @@ def makegrid_fixed_outputres(thumb_res, output_res, output_path, list_images, pe
     nrow = math.ceil( out_w/target_thumb_w )
     nline = math.ceil( out_h/target_thumb_h )
 
-    print("-- Grid: {}/{}".format(nrow,nline))
-    print("-- New resolution: {}/{}".format(target_thumb_w, target_thumb_h))
+    log += "-- Grid: {}/{}\n".format(nrow,nline)
+    log += "-- New resolution: {}/{}\n".format(target_thumb_w, target_thumb_h)
 
     amountofimages = nrow*nline
     if len(list_images) >= amountofimages:
-        print("-- No duplicata")
+        log += "-- No duplicata"
         res = random.sample( range(0, len(list_images)), amountofimages)
     else:
-        print("-- Duplicata")
+        log += "-- Duplicata"
         res = []
         for i in range(len(list_images)):
             res.append(i)
@@ -172,6 +175,7 @@ def makegrid_fixed_outputres(thumb_res, output_res, output_path, list_images, pe
 
     
     result.save(output_path)
+    return log
 
 def cleanup_unidentified(imgfolder):
     limage = os.listdir(imgfolder)
@@ -184,14 +188,19 @@ def cleanup_unidentified(imgfolder):
             os.rename(image_path, image_path+".NO")
     
 def main_grid_creator(boxart_fold, output_resolution, ntiles, padding, ouputimg, only_compat_aspectratio = False, cleanup = False, color_scale = 1.0):
+    llog = []
     if only_compat_aspectratio:
-        resolution, limages  = get_resolution_onlyrescompatible(boxart_fold)
+        resolution, limages, log  = get_resolution_onlyrescompatible(boxart_fold)
     else:
-        resolution, limages  = get_resolution_allimages(boxart_fold)
-    
+        resolution, limages, log  = get_resolution_allimages(boxart_fold)
+    llog.append( log )
     if resolution:
         if cleanup:
             cleanup_unidentified(boxart_fold)
 
-        makegrid_fixed_outputres(resolution, output_resolution, ouputimg, limages, ntiles, padding, color_scale = color_scale)
+        reslog = makegrid_fixed_outputres(resolution, output_resolution, ouputimg, limages, ntiles, padding, color_scale = color_scale)
+        llog.append( reslog )
+        return True, llog
 
+    llog.append("Unable to define a resolution, source folder must be empty")
+    return False, llog

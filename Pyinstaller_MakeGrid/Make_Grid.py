@@ -1,12 +1,13 @@
 __author__ = "Frank Vayssettes"
 __maintainer__ = "Frank Vayssettes"
-__email__ = "frank.v7@mocaplab.com"
 __status__ = "Beta"
 
 
 import os, sys
-from PySide2 import QtUiTools, QtWidgets
-from PySide2 import QtGui
+#from PySide2 import QtUiTools, QtWidgets, QFileDialog
+#from PySide2 import QtGui
+from PySide6 import QtUiTools,QtCore,QtGui,QtWidgets
+from PySide6.QtWidgets import (QApplication,QDockWidget,QPushButton,QHBoxLayout,QListWidgetItem,QFileDialog)
 import inspect
 import Lib.Demo_Lib as H
 
@@ -36,6 +37,9 @@ class C3D_Checker():
         self.ui.setWindowTitle(self.toolname + " v" + str(self.version))
 
 
+        self.ui.bt_srcfolder.clicked.connect(self._srcfolder)
+        self.ui.bt_ouputimg.clicked.connect(self._ouputimg)
+        
         self.ui.bt_yay.clicked.connect(self.yay)
 
 
@@ -46,18 +50,50 @@ class C3D_Checker():
         self.ui.show()
         sys.exit(app.exec_())
 
+
+    def _srcfolder(self):
+        folder = QFileDialog.getExistingDirectory(None, 'Select an awesome directory', "")
+        if folder:
+            self.ui.lineEdit_srcfolder.setText(folder)
+
+    def _ouputimg(self):
+        filenames, _ = QFileDialog.getSaveFileName(
+                        None,
+                        "QFileDialog.getSaveFileName()",
+                        "",
+                        "jpeg (*.jpg)",
+                    )
+
+        if filenames:
+            self.ui.lineEdit_ouputimg.setText(filenames)
+
+
     def yay(self):
-        boxart_fold     = r"F:\Boxart_Project\Batocera_Systems\3do" ## path where the boxart images are stored
-        output_img      = r"F:\Boxart_Project\result.jpg" ## the output file
+        boxart_fold     = str(self.ui.lineEdit_srcfolder.text())#r"F:\Boxart_Project\Batocera_Systems\3do" ## path where the boxart images are stored
+        output_img      = str(self.ui.lineEdit_ouputimg.text())#r"F:\Boxart_Project\result.jpg" ## the output file
 
-        color_scale         = 1.2 ## enhancement value
-        only_compat_ratio   = True ## Try to use only cross compatible aspect ratios
-        resolution          = (1920,1080) ## output resolution
-        ncol                = 10 ## nuber of columns
-        padding             = 5 ## spacing between boxarts
+        if not os.path.exists(boxart_fold):
+            H.popup("Source folder does not exist")
+        else:
+            color_scale         = float( self.ui.doubleSpinBox_Color.value() ) #1.2 ## enhancement value
+            only_compat_ratio   = True ## Try to use only cross compatible aspect ratios
+            resolution          = ( int(self.ui.spinBox_Width.value()) , int(self.ui.spinBox_Height.value())   )#(1920,1080) ## output resolution
+            ncol                = int(self.ui.spinBox_numberofcol.value()) #10 ## nuber of columns
+            padding             = int(self.ui.spinBox_Padding.value()) #<5 ## spacing between boxarts
 
-        H.main_grid_creator(boxart_fold, resolution, ncol, padding, output_img, only_compat_aspectratio= only_compat_ratio, color_scale = color_scale)
-        H.popup("Yay")
+
+            res, llog = H.main_grid_creator(boxart_fold, resolution, ncol, padding, output_img, only_compat_aspectratio= only_compat_ratio, color_scale = color_scale)
+            if res:
+                strlog = "Done:\n"
+                for l in llog:
+                    strlog += "{}\n".format(l)
+                
+                H.popup(strlog)
+            else:
+                strlog = "Done:\n"
+                for l in llog:
+                    strlog += "{}\n".format(l)
+                H.popup(strlog)
 
 
 
