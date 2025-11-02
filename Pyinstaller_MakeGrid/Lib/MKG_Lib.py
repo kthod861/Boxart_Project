@@ -9,11 +9,11 @@ import math
 def popup(s):
     dlg = QtWidgets.QMessageBox(None)
     dlg.setWindowTitle("POPUP")
-    dlg.setText(s)
+    dlg.setText(str(s))
     button = dlg.exec_()
 
     if button == QtWidgets.QMessageBox.Ok:
-        print("OK!")
+        return True
 
 def get_resolution(img_folder):
     lfiles = os.listdir(img_folder)
@@ -204,3 +204,29 @@ def main_grid_creator(boxart_fold, output_resolution, ntiles, padding, ouputimg,
 
     llog.append("Unable to define a resolution, source folder must be empty")
     return False, llog
+
+
+def list_file(folders, ext = ".png"):
+    list_files = []
+    for folderprocess in folders:
+        for dirpath, dirnames, filenames in os.walk(folderprocess):
+            for filename in [f for f in filenames if f.endswith(ext)]:
+                list_files.append( os.path.join(dirpath, filename) )
+    return list_files
+
+def compress_boxart( boxart_fold, img_quality = 80 , base_height = 300):
+    msg = ""
+    limages = list_file( [boxart_fold] )
+    for image_file in limages:
+        try:
+            img = Image.open(image_file)
+            
+            if base_height < int(img.size[1]):
+                hpercent = (base_height / float(img.size[1]))
+                wsize = int((float(img.size[0]) * float(hpercent)))
+                img = img.resize((wsize, base_height), Image.Resampling.LANCZOS)
+            img.save(image_file, 'PNG', optimize=True, quality=img_quality)
+        except IOError:
+                    msg += "\ ncannot create thumbnail for '%s'" % image_file 
+        
+    return ( "Processed {} files\n\nLogs:\n{}".format( len(limages ), msg))

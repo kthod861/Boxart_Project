@@ -9,11 +9,11 @@ import os, sys
 from PySide6 import QtUiTools,QtCore,QtGui,QtWidgets
 from PySide6.QtWidgets import (QApplication,QDockWidget,QPushButton,QHBoxLayout,QListWidgetItem,QFileDialog)
 import inspect
-import Lib.Demo_Lib as H
+import Lib.MKG_Lib as H
 
 
 
-class C3D_Checker():
+class Make_Grid():
     '''
     '''
     toolname = "Make Grid"
@@ -40,15 +40,17 @@ class C3D_Checker():
         self.ui.bt_srcfolder.clicked.connect(self._srcfolder)
         self.ui.bt_ouputimg.clicked.connect(self._ouputimg)
         
-        self.ui.bt_yay.clicked.connect(self.yay)
+        self.ui.bt_mkgrid.clicked.connect(self.mkgrid)
 
+        self.ui.bt_srcfolder_2.clicked.connect(self._srcfolder_2)
+        self.ui.bt_compress.clicked.connect(self._compress)
 
         #--Lock windows size
         w = self.ui.geometry().width()
         h = self.ui.geometry().height()
         self.ui.setFixedSize(w,h)
         self.ui.show()
-        sys.exit(app.exec_())
+        sys.exit(app.exec())
 
 
     def _srcfolder(self):
@@ -68,7 +70,7 @@ class C3D_Checker():
             self.ui.lineEdit_ouputimg.setText(filenames)
 
 
-    def yay(self):
+    def mkgrid(self):
         boxart_fold     = str(self.ui.lineEdit_srcfolder.text())#r"F:\Boxart_Project\Batocera_Systems\3do" ## path where the boxart images are stored
         output_img      = str(self.ui.lineEdit_ouputimg.text())#r"F:\Boxart_Project\result.jpg" ## the output file
 
@@ -95,6 +97,18 @@ class C3D_Checker():
                     strlog += "{}\n".format(l)
                 H.popup(strlog)
 
+    def _srcfolder_2(self):
+        folder = QFileDialog.getExistingDirectory(None, 'Select an awesome directory', "")
+        if folder:
+            self.ui.lineEdit_srcfolder_2.setText(folder)
 
+    def _compress(self):
+        boxart_fold     = str(self.ui.lineEdit_srcfolder_2.text())
+        #H.popup( boxart_fold )
+        if os.path.exists( boxart_fold ):
+            imq = int(self.ui.spinBox_compression.value())
+            hmax = int(self.ui.spinBox_Height_2.value())
+            res = H.compress_boxart( boxart_fold, img_quality = imq, base_height = hmax )
+            H.popup("Result:\n{}".format(res) )
 
-t = C3D_Checker()
+t = Make_Grid()

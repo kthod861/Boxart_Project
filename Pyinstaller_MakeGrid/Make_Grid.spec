@@ -5,7 +5,7 @@ a = Analysis(
     ['F:\\Boxart_Project\\Pyinstaller_MakeGrid/Make_Grid.py'],
     pathex=[],
     binaries=[],
-    datas=[('F:\\Boxart_Project\\Pyinstaller_MakeGrid/Lib/MCL.ico', 'Lib/'), ('F:\\Boxart_Project\\Pyinstaller_MakeGrid/Lib/Demo.ui', 'Lib/'), ('F:\\Boxart_Project\\Pyinstaller_MakeGrid/Lib/Demo_Lib.py', 'Lib/')],
+    datas=[('F:\\Boxart_Project\\Pyinstaller_MakeGrid/Lib/MCL.ico', 'Lib/'), ('F:\\Boxart_Project\\Pyinstaller_MakeGrid/Lib/Demo.ui', 'Lib/'), ('F:\\Boxart_Project\\Pyinstaller_MakeGrid/Lib/MKG_Lib.py', 'Lib/')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
